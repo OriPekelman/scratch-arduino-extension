@@ -801,6 +801,35 @@
       ['r', 'leer analógico %n', 'analogRead', 0], 
       ['-'],
       ['r', 'convertir %n de %n %n a %n %n', 'mapValues', 50, 0, 100, -240, 240]
+    ],
+    fr: [
+      ['h', 'quand l\'appareil est connecté, 'whenConnected'],
+      [' ', 'connecter %m.hwOut à la fiche %n', 'connectHW', 'led A', 3],
+      [' ', 'connecter %m.hwIn à l\'entrée analogue %n', 'connectHW', 'rotation knob', 0],
+      ['-'],
+      [' ', 'régler %m.leds %m.outputs', 'digitalLED', 'led A', 'on'],
+      [' ', 'régler la %m.leds la luminosité %n%', 'setLED', 'led A', 100],
+      [' ', 'changer %m.leds la luminosité par %n%', 'changeLED', 'led A', 20],
+      ['-'],
+      [' ', 'faire tourner %m.servos à %n degrés', 'rotateServo', 'servo A', 180],
+      [' ', 'faire tourner %m.servos de %n degrés', 'changeServo', 'servo A', 20],
+      ['-'],
+      ['h', 'quand %m.buttons est %m.btnStates', 'whenButton', 'button A', 'pressed'],
+      ['b', '%m.buttons pressé?', 'isButtonPressed', 'button A'],
+      ['-'],
+      ['h', 'quand %m.hwIn %m.ops %n%', 'whenInput', 'rotation knob', '>', 50],
+      ['r', 'lire %m.hwIn', 'readInput', 'rotation knob'],
+      ['-'],
+      [' ', 'fixer fiche %n %m.outputs', 'digitalWrite', 1, 'on'],
+      [' ', 'fixer fiche %n à %n%', 'analogWrite', 3, 100],
+      ['-'],
+      ['h', 'quand la fiche %n est %m.outputs', 'whenDigitalRead', 1, 'on'],
+      ['b', 'fiche %n active?', 'digitalRead', 1],
+      ['-'],
+      ['h', 'quand  %n analogue %m.ops %n%', 'whenAnalogRead', 1, '>', 50],
+      ['r', 'lire %n analogue', 'analogRead', 0],
+      ['-'],
+      ['r', 'mapper %n de %n %n à %n %n', 'mapValues', 50, 0, 100, -240, 240]
     ]
   };
 
@@ -892,6 +921,16 @@
       hwOut: ['led A', 'led B', 'led C', 'led D', 'botón A', 'botón B', 'botón C', 'botón D', 'servo A', 'servo B', 'servo C', 'servo D'],
       leds: ['led A', 'led B', 'led C', 'led D'],
       outputs: ['on', 'off'],
+      ops: ['>', '=', '<'],
+      servos: ['servo A', 'servo B', 'servo C', 'servo D']
+    },
+    fr: {
+      buttons: ['bouton A', 'bouton B', 'bouton C', 'bouton D'],
+      btnStates: ['pressé', 'relâché'],
+      hwIn: ['bouton rotatif', 'capteur de lumière', 'capteur de température'],
+      hwOut: ['led A', 'led B', 'led C', 'led D', 'bouton A', 'bouton B', 'bouton C', 'bouton D', 'servo A', 'servo B', 'servo C', 'servo D'],
+      leds: ['led A', 'led B', 'led C', 'led D'],
+      outputs: ['actif', 'éteint'],
       ops: ['>', '=', '<'],
       servos: ['servo A', 'servo B', 'servo C', 'servo D']
     }
